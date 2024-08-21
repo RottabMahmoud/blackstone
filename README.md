@@ -26,6 +26,7 @@ Create a TypeScript-based web component that allows users to search for location
 5. **Type Checking**: Use TypeScript’s static type checking.
 
 ### Bonus
+
 - Added runtime type checking for the API response.
 
 ### Example API Request
@@ -59,9 +60,10 @@ curl --location 'https://nominatim.openstreetmap.org/search?format=json&q=cairo'
 ```
 
 ## Project Hierarchy
+
 ```bash
-  blackstone                     
-├─ node_modules 
+  blackstone
+├─ node_modules
 ├─ debounced_search_html
 ├─ debounced_search.js
 ├─ debounced_search.ts
@@ -71,6 +73,88 @@ curl --location 'https://nominatim.openstreetmap.org/search?format=json&q=cairo'
 └─ tsconfig.json
 ```
 
+## Task 2: React
+
+### Objective
+
+Refactor the TypeScript function from Task 1 into a React application with route-based navigation.
+
+### Requirements
+
+1. **React Setup**:
+
+   - Created a React application using Vite.
+   - Structured the project to include TypeScript, React, and CSS files.
+
+2. **Debounce Hook**:
+
+   - Implemented a custom React hook, `useDebounce`, for debounce functionality.
+   - Used this hook in the `SearchComponent` to handle input debounce.
+
+3. **Search Component**:
+
+   - Refactored the search functionality into a React component.
+   - Displayed search results in a list below the input field.
+   - Integrated error handling for API requests.
+
+4. **Location Details Component**:
+
+   - Created a `LocationDetail` component to show detailed information about a selected location.
+   - Implemented route-based navigation using React Router to display location details.
+   - Added a "Back" link to navigate to the main search page.
+
+5. **Styling**:
+   - Styled the React components using pure CSS to enhance UI:
+     - `index.css` for general styling.
+     - Styled components including the search input, results list, and location detail page.
+
+### Bonus
+
+- Added runtime type checking for the API response.
+
+## Project Installation
+
+```bash
+git clone https://github.com/RottabMahmoud/blackstone.git
+cd blackstone
+git checkout feature/react-debounce
+cd react-debounce-app
+npm install
+```
+
+## To Start the App
+
+```bash
+npm run dev
+```
+
+## For Building
+
+```bash
+npm build
+```
+
+### File Structure
+
+```bash
+  react-debounce-app
+├─ node_modules
+├─ public
+│  └─ index.html
+├─ src
+│  ├─ components
+│  │  ├─ LocationDetail.tsx
+│  │  └─ SearchComponent.tsx
+│  ├─ hooks
+│  │  └─ useDebounce.ts
+│  ├─ index.tsx
+│  ├─ index.css
+│  └─ App.tsx
+├─ package-lock.json
+├─ package.json
+├─ tsconfig.json
+└─ README.md
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
@@ -78,3 +162,4 @@ curl --location 'https://nominatim.openstreetmap.org/search?format=json&q=cairo'
 ## Badge
 
 <a href="https://rottab.vercel.app"> <img src="https://img.shields.io/badge/Mahmoud%20Rottab-Porfolio" alt="Mahmoud Rottab" /> </a>
+```
