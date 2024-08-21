@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import useDebounce from "../useDebounce";
 
 async function fetchLocations(query: string): Promise<any[]> {
@@ -32,7 +33,6 @@ const SearchComponent: React.FC = () => {
 
   return (
     <div>
-      <h1>Search Locations</h1>
       <input
         type="text"
         placeholder="Search for a location"
@@ -41,8 +41,8 @@ const SearchComponent: React.FC = () => {
       />
       <ul>
         {results.map((result) => (
-          <li key={result.place_id} className="result-item">
-            {result.display_name}
+          <li key={result.place_id}>
+            <Link to={`/location/${result.place_id}`}>{result.display_name}</Link>
           </li>
         ))}
       </ul>

@@ -28,3 +28,14 @@ ul {
   border: 1px solid #ddd;
   border-radius: 4px;
 }
+
+/* Example styles for the detail page */
+h2 {
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
