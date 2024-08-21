@@ -41,8 +41,10 @@ const SearchComponent: React.FC = () => {
       />
       <ul>
         {results.map((result) => (
-          <li key={result.place_id}>
-            <Link to={`/location/${result.place_id}`}>{result.display_name}</Link>
+          <li className="result-item" key={result.place_id}>
+            <Link to={`/location/${result.place_id}`}>
+              {result.display_name}
+            </Link>
           </li>
         ))}
       </ul>

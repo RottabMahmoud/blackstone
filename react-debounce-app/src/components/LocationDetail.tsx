@@ -25,20 +25,16 @@ const LocationDetail: React.FC = () => {
   if (!location) return <p>Loading...</p>;
 
   return (
-    <div>
+    <div className="location-detail">
       {/* Back Link */}
-      <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+      <Link to="/" className="back-link">
         ◄ Back
       </Link>
 
       {/* Location Details */}
-      <div style={{ display: "flex", marginTop: "10px" }}>
-        <h2 style={{ margin: "1px" }}>{location.localname}</h2>
-        <img
-          style={{ margin: "1px" }}
-          src={location.icon}
-          alt={`${location.localname} icon`}
-        />
+      <div className="location-header">
+        <h2>{location.localname}</h2>
+        <img src={location.icon} alt={`${location.localname} icon`} />
       </div>
       <p>
         <strong>Country Code:</strong> {location.country_code}
@@ -61,10 +57,10 @@ const LocationDetail: React.FC = () => {
       <p>
         <strong>Importance:</strong> {location.importance}
       </p>
-      <p>
+      <p className="coordinates">
         <strong>Latitude:</strong> {location.centroid?.coordinates[1]}
       </p>
-      <p>
+      <p className="coordinates">
         <strong>Longitude:</strong> {location.centroid?.coordinates[0]}
       </p>
     </div>
