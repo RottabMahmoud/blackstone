@@ -47,7 +47,7 @@ function makeDebounce(fn, delay) {
 // Fetch locations from OpenStreetMap API
 function fetchLocations(query) {
     return __awaiter(this, void 0, void 0, function () {
-        var response, error_1;
+        var response, data, error_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -62,7 +62,16 @@ function fetchLocations(query) {
                     if (!response.ok)
                         throw new Error("Network response was not ok");
                     return [4 /*yield*/, response.json()];
-                case 3: return [2 /*return*/, _a.sent()];
+                case 3:
+                    data = _a.sent();
+                    // Validate the API response
+                    if (Array.isArray(data) && data.every(isLocation)) {
+                        return [2 /*return*/, data];
+                    }
+                    else {
+                        throw new Error("Invalid API response");
+                    }
+                    return [3 /*break*/, 5];
                 case 4:
                     error_1 = _a.sent();
                     console.error("Fetch error:", error_1);
@@ -71,6 +80,27 @@ function fetchLocations(query) {
             }
         });
     });
+}
+// Type guard for Location
+function isLocation(data) {
+    return (typeof data === "object" &&
+        data !== null &&
+        typeof data.place_id === "number" &&
+        typeof data.licence === "string" &&
+        typeof data.osm_type === "string" &&
+        typeof data.osm_id === "number" &&
+        typeof data.lat === "string" &&
+        typeof data.lon === "string" &&
+        typeof data.class === "string" &&
+        typeof data.type === "string" &&
+        typeof data.place_rank === "number" &&
+        typeof data.importance === "number" &&
+        typeof data.addresstype === "string" &&
+        typeof data.name === "string" &&
+        typeof data.display_name === "string" &&
+        Array.isArray(data.boundingbox) &&
+        data.boundingbox.length === 4 &&
+        data.boundingbox.every(function (box) { return typeof box === "string"; }));
 }
 // Render results in the DOM
 function renderResults(results) {
