@@ -35,7 +35,7 @@ Create a TypeScript-based web component that allows users to search for location
 git clone https://github.com/RottabMahmoud/blackstone.git
 cd blackstone
 git checkout feature/typescript-debounce
-tsc debounced_search.ts
+tsc debounced_search.ts // to compile the ts to js
 open debounced_search.html file in browser
 ```
 
