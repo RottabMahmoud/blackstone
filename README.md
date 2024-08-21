@@ -58,9 +58,9 @@ curl --location 'https://nominatim.openstreetmap.org/search?format=json&q=cairo'
 ]
 ```
 
-### Project Hierarchy
-
-blackstone-challenge                     
+## Project Hierarchy
+```bash
+  blackstone                     
 ├─ node_modules 
 ├─ debounced_search_html
 ├─ debounced_search.js
@@ -68,7 +68,8 @@ blackstone-challenge
 ├─ README.md
 ├─ package-lock.json
 ├─ package.json
-├─ tsconfig.json
+└─ tsconfig.json
+```
 
 ## License
 
