@@ -1,6 +1,6 @@
 ## Overview
 
-This assessment consists of three interconnected tasks designed to evaluate your skills in TypeScript.
+This assessment consists of three interconnected tasks designed to evaluate your skills in TypeScript, React, & Git.
 
 ## Task 1: TypeScript
 
