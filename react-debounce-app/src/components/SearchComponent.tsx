@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import useDebounce from "../useDebounce";
+import useDebounce from "../hooks/useDebounce";
 
 async function fetchLocations(query: string): Promise<any[]> {
   if (!query) return [];
