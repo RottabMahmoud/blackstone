@@ -25,6 +25,9 @@ Create a TypeScript-based web component that allows users to search for location
 4. **Error Handling**: Implement error handling for the API calls.
 5. **Type Checking**: Use TypeScript’s static type checking.
 
+### Bonus
+- Added runtime type checking for the API response.
+
 ### Example API Request
 
 ```bash
@@ -54,6 +57,19 @@ curl --location 'https://nominatim.openstreetmap.org/search?format=json&q=cairo'
   }
 ]
 ```
+
+### Project Hierarchy
+
+blackstone-challenge                     
+├─ node_modules 
+├─ debounced_search_html
+├─ debounced_search.js
+├─ debounced_search.ts
+├─ README.md
+├─ package-lock.json
+├─ package.json
+├─ tsconfig.json
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
