@@ -65,7 +65,7 @@ npm build
 ### File Structure
 
 ```bash
-  react-debounce-app
+  blackstone
 ├─ node_modules
 ├─ src
 │  ├─ components
