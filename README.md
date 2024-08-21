@@ -89,4 +89,3 @@ curl --location 'https://nominatim.openstreetmap.org/search?format=json&q=cairo'
 ## Badge
 
 <a href="https://rottab.vercel.app"> <img src="https://img.shields.io/badge/Mahmoud%20Rottab-Porfolio" alt="Mahmoud Rottab" /> </a>
-```
