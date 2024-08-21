@@ -29,6 +29,15 @@ Create a TypeScript-based web component that allows users to search for location
 
 - Added runtime type checking for the API response.
 
+## Project Installation
+
+```bash
+git clone https://github.com/RottabMahmoud/blackstone.git
+cd blackstone
+tsc debounced_search.ts
+open debounced_search.html file in browser
+```
+
 ### Example API Request
 
 ```bash

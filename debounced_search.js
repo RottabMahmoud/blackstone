@@ -35,7 +35,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 var _this = this;
-// Debounce function
+// The Debounce function
 function makeDebounce(fn, delay) {
     var timer;
     return function (input) {
@@ -102,7 +102,7 @@ function isLocation(data) {
         data.boundingbox.length === 4 &&
         data.boundingbox.every(function (box) { return typeof box === "string"; }));
 }
-// Render results in the DOM
+// To Render results in the DOM
 function renderResults(results) {
     var resultsContainer = document.getElementById("results");
     if (!resultsContainer)
@@ -124,7 +124,7 @@ var debouncedSearch = makeDebounce(function (input) { return __awaiter(_this, vo
         }
     });
 }); }, 1000);
-// Add event listener to input field
+// Added event listener to input field
 var searchInput = document.getElementById("searchInput");
 if (searchInput) {
     searchInput.addEventListener("input", function (event) {
