@@ -1,3 +1,5 @@
+// Location Interface: The Location interface defines the structure of the data expected from the API response, 
+// including properties like place_id, lat, lon, and display_name.
 // Defined interface for the API response
 interface Location {
   place_id: number;
@@ -16,6 +18,8 @@ interface Location {
   boundingbox: [string, string, string, string];
 }
 
+// Debounce Function: The makeDebounce function creates a debounced version of a function, delaying its execution until after a specified time 
+// (delay). If the function is called again before the delay is over, the previous call is canceled.
 // The Debounce function
 function makeDebounce(fn: (input: string) => void, delay: number) {
   let timer: number | undefined;
@@ -25,6 +29,8 @@ function makeDebounce(fn: (input: string) => void, delay: number) {
   };
 }
 
+// Fetch Locations: The fetchLocations function takes a search query as input and fetches matching locations from the OpenStreetMap API. 
+// It returns an array of Location objects after validating the response with a type guard (isLocation).
 // Fetch locations from OpenStreetMap API
 async function fetchLocations(query: string): Promise<Location[]> {
   if (!query) return [];
@@ -49,6 +55,8 @@ async function fetchLocations(query: string): Promise<Location[]> {
   }
 }
 
+// Type Guard: The isLocation function is a type guard that checks whether the fetched data conforms to the Location interface.
+// It ensures the data is correctly structured before it is used.
 // Type guard for Location
 function isLocation(data: any): data is Location {
   return (
@@ -73,6 +81,8 @@ function isLocation(data: any): data is Location {
   );
 }
 
+// Render Results: The renderResults function updates the DOM by displaying the fetched location results. 
+// It maps over the results and creates HTML elements for each location, which are then inserted into the webpage.
 // To Render results in the DOM
 function renderResults(results: Location[]) {
   const resultsContainer = document.getElementById("results");
@@ -83,12 +93,18 @@ function renderResults(results: Location[]) {
     .join("");
 }
 
+
+// Debounced Search: The debouncedSearch function is created using makeDebounce, which wraps around the logic to fetch and display results. 
+// It delays the API call until the user has stopped typing for 1 second.
 // Debounced search function
 const debouncedSearch = makeDebounce(async (input: string) => {
   const results = await fetchLocations(input);
   renderResults(results);
 }, 1000);
 
+
+// Event Listener: Finally, an event listener is added to an input field with the ID searchInput. When the user types into the input, 
+// the debouncedSearch function is triggered, fetching and displaying location results as the user types.
 // Added event listener to input field
 const searchInput = document.getElementById("searchInput") as HTMLInputElement;
 if (searchInput) {
